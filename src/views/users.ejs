@@ -1,0 +1,84 @@
+<%- include("components/header") %>
+<body>
+  <div class="container">
+    <%- include("components/sidebar") %>
+    <div class="main">
+      <div class="top-bar">
+        <h1>Users Management</h1>
+        <div class="topbar-avatar">
+          <img
+            src="/<%=user.memberImage%>"
+            alt=""
+            style="width: 40px; height: 40px; border-radius: 50%"
+          />
+
+          <strong id="text"><%=user.memberNick%></strong>
+        </div>
+      </div>
+      <div class="content_frame">
+        <div class="table_card">
+
+          <div class="table_toolbar">
+            <div class="search_box">
+              <i class="fa-solid fa-magnifying-glass"></i>
+              <input type="search" name="" id="search" placeholder="Search user by nickname or email..."/>
+            </div>
+           
+          </div>
+          <table>
+            <thead>
+              <tr>
+                <th>T/R</th>
+                <th>USER</th>
+                <th>PHONE NUMBER</th>
+                <th>DATE JOINED</th>
+                <th>USER STATUS</th>
+
+              </tr>
+            </thead>
+            <tbody>
+              <% users.map((member, index) => { %>
+                <tr data-created-at="<%= member.createdAt %>" class="user_row">
+                  <td><%= index + 1 %></td>
+                  <td class="user_info">
+                    <div style="display: flex;">
+                    <img src="/<%= member.memberImage ? member.memberImage : 'images/default-icon.png' %>" style="width: 40px; height: 40px; border-radius: 50%;" />
+                    <div class="avatar_setup">
+                      <strong><%= member.memberNick %></strong>
+                      <span><%=member.memberEmail %></span>
+                    </div>
+                    </div>
+                  </td>
+                  <td><%= member.memberPhone %></td>
+                  <td>
+                    <%= new Date(member.createdAt).toLocaleString("en-GB", {
+                      day: "2-digit",
+                      month: "short",
+                      year: "numeric",
+                      hour: "2-digit",
+                      minute: "2-digit",
+                    }) %>
+                  </td>
+                  <td>
+                    <div class="select_btn">
+                      <select name="" data-id="<%= member._id %>" class="status_select">
+                        <option value="ACTIVE" <%=member.memberStatus === 'ACTIVE' ? 'selected' : ""%>>ACTIVE</option>
+                        <option value="BLOCK" <%=member.memberStatus === 'BLOCK' ? 'selected' : ""%>>BLOCK</option>
+                        <option value="DELETE" <%=member.memberStatus === 'DELETE' ? 'selected' : ""%>>DELETE</option>
+                      </select>
+                    </div>
+                  </td>
+                  
+                </tr>
+              <% }).join('') %>
+            </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="/js/users.js">
+  </script>
+</body>

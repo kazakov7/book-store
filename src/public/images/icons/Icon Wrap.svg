@@ -1,0 +1,18 @@
+<svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32.000000" height="32.000000" fill="none" customFrame="url(#clipPath_0)">
+	<defs>
+		<clipPath id="clipPath_0">
+			<rect width="32.000000" height="32.000000" x="0.000000" y="0.000000" rx="8.000000" fill="rgb(255,255,255)" />
+		</clipPath>
+		<clipPath id="clipPath_1">
+			<rect width="18.000000" height="18.000000" x="7.000000" y="7.000000" fill="rgb(255,255,255)" />
+		</clipPath>
+	</defs>
+	<rect id="Icon Wrap" width="32.000000" height="32.000000" x="0.000000" y="0.000000" rx="8.000000" fill="rgb(220,252,231)" />
+	<g id="users" customFrame="url(#clipPath_1)">
+		<rect id="users" width="18.000000" height="18.000000" x="7.000000" y="7.000000" />
+		<path id="벡터 36" d="M19 22.75L19 21.25C19 20.7234 18.8614 20.2061 18.5981 19.75C18.3348 19.2939 17.9561 18.9152 17.5 18.6519C17.0439 18.3886 16.5266 18.25 16 18.25L11.5 18.25C10.9734 18.25 10.4561 18.3886 10 18.6519C9.54394 18.9152 9.16523 19.2939 8.90192 19.75C8.63862 20.2061 8.5 20.7234 8.5 21.25L8.5 22.75" fill-rule="nonzero" stroke="rgb(22,163,74)" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.500000" />
+		<path id="벡터 37" d="M19 9.34601C19.513 9.47899 19.9816 9.74548 20.3581 10.1184C20.7346 10.4912 21.0057 10.9572 21.1437 11.4688C21.2816 11.9805 21.2816 12.5195 21.1437 13.0312C21.0057 13.5428 20.7346 14.0088 20.3581 14.3817C19.9816 14.7545 19.513 15.021 19 15.154" fill-rule="nonzero" stroke="rgb(22,163,74)" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.500000" />
+		<path id="벡터 38" d="M23.5 22.75L23.5 21.25C23.4997 20.8091 23.4022 20.3737 23.2144 19.9748C23.0267 19.5759 22.7533 19.2232 22.4138 18.942C22.0742 18.6607 21.6769 18.4577 21.25 18.3475" fill-rule="nonzero" stroke="rgb(22,163,74)" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.500000" />
+		<circle id="타원 5" cx="13.75" cy="12.25" r="3" stroke="rgb(22,163,74)" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.500000" />
+	</g>
+</svg>

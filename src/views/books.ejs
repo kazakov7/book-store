@@ -1,0 +1,99 @@
+<%- include("components/header") %>
+<%- include("components/add-book") %>
+<%- include("components/update-book") %>
+<body>
+  <div class="container">
+   <%- include("components/sidebar") %>
+    <div class="main">
+      <div class="top-bar">
+        <h1>Books Management</h1>
+        <div class="topbar-avatar">
+          <img
+            src="/<%=user.memberImage%>"
+            alt=""
+            style="width: 40px; height: 40px; border-radius: 50%"
+          />
+          <strong><%=user.memberNick%></strong>
+        </div>
+      </div>
+      <div class="content_frame">
+        <div class="table_card">
+          <div class="table_toolbar">
+            <div class="search_box">
+              <i class="fa-solid fa-magnifying-glass"></i>
+              <input type="search" name="" id="search" placeholder="Search book by name..."/>
+            </div>
+            <div class="add_btn">
+              <button class="demo-add-btn" id="openAddBookBtn"><i class="fa-solid fa-plus"></i>ADD BOOK</button>
+            </div>
+          </div>
+          <table>
+            <thead>
+              <tr>
+                <th>T/R</th>
+                <th>TITLE</th>
+                <th>AUTHOR</th>
+                <th>ISBN</th>
+                <td>CATEGORY</td>
+                <th>PRICE</th>
+                <th>STOCK</th>
+                <th>Description</th>
+                <th>STATUS</th>
+                <th>ACTION</th>
+              </tr>
+            </thead>
+            <tbody>
+              <%books.map((book,index)=>{%>
+              <tr class="book_row">
+                <td><%=index+1%></td>
+                <td class="book_name"><span><%=book.title%></span></td>
+                <td class="book_name"><%=book.author%></td>
+                <td><%=book.isbn%></td>
+                <td class="book_name"><%=book.category%></td>
+                <td><%=book.price%></td>
+                <td><%=book.stock%></td>
+                <td>
+                    <%= book.description
+                      ? (book.description.length > 30
+                          ? book.description.slice(0, 30) + "..."
+                          : book.description)
+                      : "-" %>
+                  </td>
+
+                <td class="product_status">
+                      <% if (book.status === "ACTIVE") { %>
+                          <span class="status active">ACTIVE</span>
+                      <% }else{%>
+                          <span class="status out">OUT_OF_STOCK</span>
+                      <% } %>
+                </td>
+                <td>
+                  <button
+                      class="update_book"
+                      data-id="<%= book._id %>"
+                      data-title="<%= book.title %>"
+                      data-author="<%= book.author %>"
+                      data-pages="<%= book.pages %>"
+                      data-stock="<%= book.stock %>"
+                      data-status="<%= book.status %>"
+                      data-price="<%= book.price %>"
+                      data-published-year="<%= book.publishedYear %>"
+                      data-isbn="<%= book.isbn %>"
+                      data-category="<%= book.category %>"
+                      data-description="<%= book.description %>">
+                      <img src="/images/icons/edit-btn.svg" alt="">
+                  </button>
+                </td>
+              </tr>
+             <% })%>
+              
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="/js/books.js"></script>
+</body>

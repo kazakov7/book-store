@@ -1,0 +1,101 @@
+body {
+  background: var(--bg);
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, sans-serif;
+  color: var(--text);
+}
+.container .main .content_frame {
+  width: 100%;
+  height: 828px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 32px;
+  box-sizing: border-box;
+}
+.container .main .content_frame .welcome {
+  width: 100%;
+  height: 136px;
+  padding: 28px 57px 28px 32px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  border-radius: 14px;
+  background: rgba(26, 43, 74, 1);
+  box-sizing: border-box;
+}
+.container .main .content_frame .welcome_text {
+  height: 51px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 8px;
+}
+.container .main .content_frame .welcome_text strong {
+  color: rgba(255, 255, 255, 1);
+  font-family: "Inter";
+  font-style: Bold;
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 27px;
+}
+.container .main .content_frame .welcome_text span {
+  color: rgba(143, 163, 192, 1);
+  font-family: "Inter";
+  font-style: Regular;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 17px;
+}
+.container .content_frame .statistics {
+  width: 100%;
+  height: 110px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 16px;
+}
+.container .content_frame .statistics .statistics_card {
+  width: 25%;
+  height: 120px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 8px;
+  padding: 20px;
+  box-sizing: border-box;
+  border: 1px solid rgba(232, 234, 240, 1);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 1);
+}
+.container .statistics_card .card_top {
+  width: 100%;
+  height: 32px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.container .statistics_card .card_top span {
+  color: rgba(107, 114, 128, 1);
+  font-family: "Inter";
+  font-style: Medium;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 16px;
+}
+
+.container .statistics_card .card_bott strong {
+  color: rgba(26, 43, 74, 1);
+  font-family: "Inter";
+  font-style: Bold;
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 34px;
+  letter-spacing: -0.5px;
+}
+/*ANIMATION*/

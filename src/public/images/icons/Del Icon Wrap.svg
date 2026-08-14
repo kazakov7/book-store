@@ -1,0 +1,19 @@
+<svg viewBox="0 0 52 52" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="52.000000" height="52.000000" fill="none" customFrame="url(#clipPath_0)">
+	<defs>
+		<clipPath id="clipPath_0">
+			<rect width="52.000000" height="52.000000" x="0.000000" y="0.000000" rx="26.000000" fill="rgb(255,255,255)" />
+		</clipPath>
+		<clipPath id="clipPath_1">
+			<rect width="24.000000" height="24.000000" x="14.000000" y="14.000000" fill="rgb(255,255,255)" />
+		</clipPath>
+	</defs>
+	<rect id="Del Icon Wrap" width="52.000000" height="52.000000" x="0.000000" y="0.000000" rx="26.000000" fill="rgb(254,226,226)" />
+	<g id="trash-2" customFrame="url(#clipPath_1)">
+		<rect id="trash-2" width="24.000000" height="24.000000" x="14.000000" y="14.000000" />
+		<path id="벡터 124" d="M24 25L24 31" stroke="rgb(220,38,38)" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.000000" />
+		<path id="벡터 125" d="M28 25L28 31" stroke="rgb(220,38,38)" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.000000" />
+		<path id="벡터 126" d="M33 20L33 34C33 34.3511 32.9076 34.696 32.732 35C32.5565 35.304 32.304 35.5565 32 35.7321C31.696 35.9076 31.3511 36 31 36L21 36C20.6489 36 20.304 35.9076 20 35.732C19.696 35.5565 19.4435 35.304 19.2679 35C19.0924 34.696 19 34.3511 19 34L19 20" fill-rule="nonzero" stroke="rgb(220,38,38)" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.000000" />
+		<path id="벡터 127" d="M17 20L35 20" stroke="rgb(220,38,38)" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.000000" />
+		<path id="벡터 128" d="M22 20L22 18C22 17.6489 22.0924 17.304 22.2679 17C22.4435 16.696 22.696 16.4435 23 16.2679C23.304 16.0924 23.6489 16 24 16L28 16C28.3511 16 28.696 16.0924 29 16.2679C29.304 16.4435 29.5565 16.696 29.7321 17C29.9076 17.304 30 17.6489 30 18L30 20" fill-rule="nonzero" stroke="rgb(220,38,38)" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.000000" />
+	</g>
+</svg>

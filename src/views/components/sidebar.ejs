@@ -1,0 +1,101 @@
+<div class="sidebar">
+  <div class="sidebar-logo">
+    <div class="sidebar-icon">
+      <svg width="64" height="64" viewBox="0 0 120 120">
+        <rect width="120" height="120" rx="28" fill="rgba(15,30,53,1)" />
+        <path
+          d="M60 35 C 52 28, 36 26, 25 28 L 25 80 C 36 78, 52 80, 60 87 Z"
+          fill="none"
+          stroke="#ffffff"
+          stroke-width="4"
+          stroke-linejoin="round"
+          stroke-linecap="round"
+        />
+        <path
+          d="M60 35 C 68 28, 84 26, 95 28 L 95 80 C 84 78, 68 80, 60 87 Z"
+          fill="none"
+          stroke="#ffffff"
+          stroke-width="4"
+          stroke-linejoin="round"
+          stroke-linecap="round"
+        />
+        <line
+          x1="60"
+          y1="35"
+          x2="60"
+          y2="87"
+          stroke="#ffffff"
+          stroke-width="3"
+        />
+      </svg>
+    </div>
+    <strong>Book Store</strong>
+  </div>
+  <div class="sidebar-space-1"></div>
+  <div class="nav-menu">
+    <a href="/admin/home" class="home">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+        fill="currentColor"
+        class="<%= currentPath === '/home' ? 'active' : '' %>"
+      >
+        <path
+          d="M12 3L3 10.5V21H9V15H15V21H21V10.5L12 3ZM19 19H17V13H7V19H5V11.4L12 6.2L19 11.4V19Z"
+        />
+      </svg>
+      <strong class="<%= currentPath === '/home' ? 'active' : '' %>"
+        >Home</strong
+      >
+    </a>
+    <a href="/admin/users" class="users">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+        fill="currentColor"
+        class="<%= currentPath === '/admin/users' ? 'active' : '' %>"
+      >
+        <path
+          d="M9 11C11.21 11 13 9.21 13 7S11.21 3 9 3 5 4.79 5 7 6.79 11 9 11ZM15 11C16.66 11 18 9.66 18 8S16.66 5 15 5C14.69 5 14.39 5.05 14.11 5.15C14.68 6.12 15 7.25 15 8.45C15 9.37 14.81 10.25 14.47 11ZM9 13C6.33 13 1 14.34 1 17V21H17V17C17 14.34 11.67 13 9 13ZM19 13C18.41 13 17.75 13.05 17.05 13.15C18.21 13.99 19 15.15 19 17V21H23V17C23 14.79 20.31 13 19 13Z"
+        />
+      </svg>
+      <strong class="<%= currentPath === '/admin/users' ? 'active' : '' %>"
+        >Users</strong
+      >
+    </a>
+    <a href="/admin/books" class="books">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+        fill="currentColor"
+        class="<%= currentPath === '/admin/books' ? 'active' : '' %>"
+      >
+        <path
+          d="M5 3C3.9 3 3 3.9 3 5V19C3 20.1 3.9 21 5 21H19C20.1 21 21 20.1 21 19V5C21 3.9 20.1 3 19 3H5ZM5 5H11V19H5V5ZM13 5H19V19H13V5Z"
+        />
+      </svg>
+      <strong class="<%= currentPath === '/admin/books' ? 'active' : '' %>"
+        >Books</strong
+      >
+    </a>
+    <div class="users"></div>
+    <div class="books"></div>
+  </div>
+  <div class="sidebar-space-2"></div>
+  <a href="/admin/logout" class="nav-logout">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    >
+      <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4" />
+      <path d="M16 17l5-5-5-5" />
+      <path d="M21 12H9" />
+    </svg>
+    <strong>Logout</strong>
+  </a>
+</div>

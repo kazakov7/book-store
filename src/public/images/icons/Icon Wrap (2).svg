@@ -1,0 +1,17 @@
+<svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32.000000" height="32.000000" fill="none" customFrame="url(#clipPath_4)">
+	<defs>
+		<clipPath id="clipPath_4">
+			<rect width="32.000000" height="32.000000" x="0.000000" y="0.000000" rx="8.000000" fill="rgb(255,255,255)" />
+		</clipPath>
+		<clipPath id="clipPath_5">
+			<rect width="18.000000" height="18.000000" x="7.000000" y="7.000000" fill="rgb(255,255,255)" />
+		</clipPath>
+	</defs>
+	<rect id="Icon Wrap" width="32.000000" height="32.000000" x="0.000000" y="0.000000" rx="8.000000" fill="rgb(254,226,226)" />
+	<g id="triangle-alert" customFrame="url(#clipPath_5)">
+		<rect id="triangle-alert" width="18.000000" height="18.000000" x="7.000000" y="7.000000" />
+		<path id="벡터 42" d="M17.2973 9.99998C17.1665 9.76914 16.9768 9.57713 16.7475 9.44354C16.5183 9.30995 16.2577 9.23956 15.9923 9.23956C15.727 9.23956 15.4664 9.30995 15.2371 9.44354C15.0079 9.57713 14.8182 9.76914 14.6873 9.99998L8.68733 20.5C8.55509 20.729 8.48575 20.9889 8.48633 21.2534C8.48692 21.5178 8.55741 21.7774 8.69066 22.0059C8.82391 22.2343 9.01519 22.4234 9.2451 22.5541C9.47501 22.6848 9.73538 22.7524 9.99982 22.75L21.9998 22.75C22.263 22.7497 22.5215 22.6802 22.7493 22.5484C22.9771 22.4167 23.1662 22.2273 23.2977 21.9993C23.4292 21.7713 23.4984 21.5128 23.4983 21.2496C23.4982 20.9864 23.4289 20.7279 23.2973 20.5L17.2973 9.99998Z" fill-rule="nonzero" stroke="rgb(0,0,0)" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.500000" />
+		<path id="벡터 43" d="M16 13.75L16 16.75" stroke="rgb(0,0,0)" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.500000" />
+		<path id="벡터 44" d="M16 19.75L16.0075 19.75" stroke="rgb(0,0,0)" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.500000" />
+	</g>
+</svg>

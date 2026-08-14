@@ -1,0 +1,93 @@
+<%- include("components/header") %>
+<body>
+  <form
+    onsubmit="return validateForm();"
+    action="/admin/signup"
+    method="POST"
+    enctype="multipart/form-data"
+  >
+    <div class="form_frame">
+      <div class="form_card signup">
+        <div class="form_logo">
+          <div class="form_logo-icon">
+            <img src="/images/image.png" alt="" />
+          </div>
+          <strong>BookStore</strong>
+        </div>
+        <div class="welcome_box">
+          <strong>Create Your Account</strong>
+          <span>Set up your Book Store admin account</span>
+        </div>
+        <div class="input_wrapper">
+          <div class="input_box">
+            <label> Nickname * </label>
+            <input
+              type="text"
+              name="memberNick"
+              id="memberNick"
+              placeholder="Your Nickname"
+            />
+          </div>
+          <div class="input_box">
+            <label> Password * </label>
+            <input
+              type="password"
+              name="memberPassword"
+              id="memberPassword"
+              placeholder="••••••••"
+            />
+          </div>
+          <div class="input_box">
+            <label> Phone number * </label>
+            <input
+              type="text"
+              name="memberPhone"
+              id="memberPhone"
+              placeholder="Your phone number"
+            />
+          </div>
+          <div class="input_box">
+            <label>Confirm Password * </label>
+            <input
+              type="password"
+              name="confirmPassword"
+              id="confirmPassword"
+              placeholder="••••••••"
+            />
+          </div>
+        </div>
+        <div class="image_frame">
+          <img src="/images/book.png" alt="" id="inputBox" />
+          <div class="input_box">
+            <span> Email *</span>
+            <input
+              type="email"
+              name="memberEmail"
+              id="memberEmail"
+              placeholder="example.gmail.com"
+            />
+
+            <div>
+              <input
+                type="text"
+                class="upload-name"
+                placeholder="book.png"
+                disabled
+              />
+              <input type="file" name="memberImage" id="memberImage" />
+            </div>
+          </div>
+        </div>
+        <div class="form_footer">
+          <button>Create account</button>
+          <div>
+            <span>Already have an account?</span>
+            <a href="/admin">Sign in</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="/js/signup.js"></script>
+</body>

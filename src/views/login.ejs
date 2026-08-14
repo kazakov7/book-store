@@ -1,0 +1,50 @@
+<%- include("components/header") %>
+<body>
+  <form action="/admin/login" method="POST">
+    <div class="form_frame">
+      <div class="form_card">
+        <div class="form_logo">
+          <div class="form_logo-icon">
+            <img src="/images/image.png" alt="" />
+          </div>
+          <strong>Book Store</strong>
+        </div>
+        <div class="welcome_box">
+          <strong>Welcome back</strong>
+          <span>Sign in to your admin account</span>
+        </div>
+        <div class="input_wrapper">
+          <div class="input_box">
+            <label for="memberNick"> Email or username *</label>
+            <input
+              type="text"
+              name="identifier"
+              id="memberNick"
+              placeholder="Email or username"
+              required
+            />
+          </div>
+          <div class="input_box">
+            <label for="memberNick"> Password * </label>
+            <input
+              type="password"
+              name="memberPassword"
+              id="memberNick"
+              placeholder="••••••••"
+              required
+            />
+          </div>
+        </div>
+        <div class="form_footer">
+          <button>Login</button>
+          <div>
+            <span>Don't have an account?</span>
+            <a href="/admin/signup">Create account</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="/js/login.js"></script>
+</body>

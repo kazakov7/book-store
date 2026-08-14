@@ -1,0 +1,43 @@
+export enum HttpCode {
+  OK = 200,
+  CREATED = 201,
+  NOT_MODIFIED = 304,
+  BAD_REQUEST = 400,
+  UNAUTHORIZED = 401,
+  FORBIDDEN = 403,
+  NOT_FOUND = 404,
+  INTERNAL_SERVER_ERROR = 500,
+}
+
+export enum Message {
+  SOMETHING_VENT_WRONG = "Something vent wrong!",
+  NO_DATA_FOUND = "No data is found!",
+  CREATED_FAILED = "Create is faile!",
+  UPDATE_FAILED = "Update is failed1",
+
+  USED_NICK_PHONE_EMAIL = "You are inserting already used phone,email or nick!",
+  NO_MEMBER_FOUND = "No member with that nick or email!",
+  BLOCKED_USER = "You have been blocked, contact admin",
+  WRONG_PASSWORD = "Wrong password, pleasse try again1",
+  NOT_AUTHENTICATED = "You are not authenticated, Please login first",
+  TOKEN_CERATION_FAILED = "Token creation failed!",
+  WRONG_INPUT = "WRONG_INPUT",
+}
+
+class Errors extends Error {
+  public code: HttpCode;
+  public message: Message;
+
+  static standart = {
+    code: HttpCode.INTERNAL_SERVER_ERROR,
+    message: Message.SOMETHING_VENT_WRONG,
+  };
+
+  constructor(statusCode: HttpCode, statusMessage: Message) {
+    super();
+    this.code = statusCode;
+    this.message = statusMessage;
+  }
+}
+
+export default Errors;

@@ -1,0 +1,95 @@
+<div class="overlayy">
+  <div class="modal">
+    <!-- Modal header -->
+    <div class="modal-header">
+      <h2>Update Book</h2>
+      <button id="closeBtn" class="close-btn">✕</button>
+    </div>
+
+    <!-- Modal body -->
+
+    <form
+      id="editBookForm"
+      class="modal-body"
+      action="/admin/book/update"
+      method="POST"
+    >
+      <div class="row">
+        <div class="col">
+          <label for="title">Book name</label>
+          <input type="text" id="old-title" name="title" />
+        </div>
+        <div class="col">
+          <label for="author" name="author">Author</label>
+          <input type="text" name="author" id="old-author" />
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <label for="pages">Pages</label>
+          <input type="number" id="old-pages" name="pages" />
+        </div>
+        <div class="col">
+          <label for="stock">Stock</label>
+          <input type="text" id="old-stock" name="stock" />
+        </div>
+      </div>
+      <input type="hidden" id="bookId" name="bookId" />
+
+      <div class="row">
+        <div class="col">
+          <label for="status">STATUS</label>
+          <select id="old-status" name="status">
+            <option value="ACTIVE" selected>ACTIVE</option>
+            <option value="OUT_OF_STOCK" selected>OUT OF STOCK</option>
+          </select>
+        </div>
+        <div class="col">
+          <label for="category">CATEGORY</label>
+          <select id="old-category" name="category">
+            <option value="ROMANCE" selected>ROMANCE</option>
+            <option value="SCIENCE">SCIENCE</option>
+            <option value="HISTORY">HISTORY</option>
+            <option value="TECHNOLOGY">TECHNOLOGY</option>
+            <option value="CHILDREN">CHILDREN</option>
+            <option value="BUSINESS">BUSINESS</option>
+            <option value="OTHER">OTHER</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <label for="price">PRICE</label>
+          <input type="number" id="old-price" min="0" name="price" />
+        </div>
+        <div class="col">
+          <label for="publishedYear" name="publishedYear">Published year</label>
+          <input type="number" id="old-publishedYear" name="publishedYear" />
+        </div>
+      </div>
+      <label for="isbn">ISBN</label>
+      <input type="text" name="isbn" id="old-isbn" />
+
+      <label for="description">DESCRIPTION</label>
+      <textarea id="old-description" rows="3" name="description"></textarea>
+    </form>
+
+    <!-- Modal footer -->
+    <div class="modal-footer">
+      <button id="cancelBtn" class="btn btn-cancel" type="button">
+        Cancel
+      </button>
+      <button
+        id="updateBtn"
+        class="btn btn-update"
+        type="submit"
+        form="editBookForm"
+      >
+        Update
+      </button>
+    </div>
+  </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="/js/books.js"></script>

@@ -1,0 +1,11 @@
+<svg viewBox="0 0 70 70" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="70.000000" height="70.000000" fill="none" customFrame="#000000">
+	<rect id="Book Stack SVG" width="70.000000" height="70.000000" x="0.000000" y="0.000000" />
+	<rect id="직사각형 5" width="20.000000" height="24.000000" x="10.000000" y="40.000000" rx="3.000000" opacity="0.899999976" fill="rgb(91,141,238)" />
+	<rect id="직사각형 6" width="3.000000" height="24.000000" x="10.000000" y="40.000000" rx="1.500000" fill="rgb(59,111,212)" />
+	<rect id="직사각형 7" width="20.000000" height="32.000000" x="25.000000" y="32.000000" rx="3.000000" opacity="0.699999988" fill="rgb(143,163,192)" />
+	<rect id="직사각형 8" width="3.000000" height="32.000000" x="25.000000" y="32.000000" rx="1.500000" fill="rgb(107,128,160)" />
+	<rect id="직사각형 9" width="20.000000" height="28.000000" x="40.000000" y="36.000000" rx="3.000000" opacity="0.800000012" fill="rgb(238,243,252)" />
+	<rect id="직사각형 10" width="3.000000" height="28.000000" x="40.000000" y="36.000000" rx="1.500000" fill="rgb(192,207,234)" />
+	<circle id="타원 3" cx="54" cy="18" r="10" opacity="0.400000006" fill="rgb(91,141,238)" />
+	<circle id="타원 4" cx="54" cy="18" r="6" opacity="0.600000024" fill="rgb(91,141,238)" />
+</svg>

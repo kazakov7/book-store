@@ -1,0 +1,220 @@
+.error {
+  outline: 1px solid red !important;
+  background-color: #fff0f0;
+}
+#add-book-overlay {
+  display: none; /* boshida yashirin */
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 27, 61, 0.45);
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+#add-book-overlay.active {
+  display: flex; /* JS orqali ochiladi */
+}
+
+#add-book-overlay #add-book {
+  width: 600px;
+
+  background: #ffffff;
+  border-radius: 14px;
+  box-shadow: 0 10px 40px rgba(15, 27, 61, 0.25);
+  overflow: hidden;
+  animation: ab-pop 0.18s ease;
+}
+
+@keyframes ab-pop {
+  from {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+#add-book-overlay #add-book .ab-header {
+  background: #0f1b3d;
+  padding: 24px 28px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#add-book-overlay #add-book .ab-header h2 {
+  color: #ffffff;
+  font-size: 20px;
+  margin: 0;
+  font-weight: 700;
+}
+
+#add-book-overlay #add-book .ab-header .ab-close {
+  color: #8a93ab;
+  font-size: 22px;
+  cursor: pointer;
+  line-height: 1;
+  transition: color 0.2s;
+}
+#add-book-overlay #add-book .ab-header .ab-close:hover {
+  color: #ffffff;
+}
+
+#add-book-overlay #add-book .ab-body {
+  padding: 28px;
+  max-height: 70vh;
+  overflow-y: auto;
+}
+
+#add-book-overlay #add-book .ab-field {
+  margin-bottom: 18px;
+}
+
+#add-book-overlay #add-book .ab-field label {
+  display: block;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #8a93ab;
+  margin-bottom: 7px;
+}
+
+#add-book-overlay #add-book .ab-field input,
+#add-book-overlay #add-book .ab-field select,
+#add-book-overlay #add-book .ab-field textarea {
+  width: 100%;
+  padding: 11px 14px;
+  border: 1px solid #d6dbe6;
+  border-radius: 8px;
+  font-size: 14px;
+  color: #1a2340;
+  background: #fafbfd;
+  outline: none;
+  transition:
+    border-color 0.2s,
+    background 0.2s;
+  font-family: inherit;
+  box-sizing: border-box;
+}
+
+#add-book-overlay #add-book .ab-field input:focus,
+#add-book-overlay #add-book .ab-field select:focus,
+#add-book-overlay #add-book .ab-field textarea:focus {
+  border-color: #0f1b3d;
+  background: #ffffff;
+}
+
+#add-book-overlay #add-book .ab-field textarea {
+  resize: vertical;
+  min-height: 90px;
+}
+
+#add-book-overlay #add-book .ab-row-2 {
+  display: flex;
+  gap: 14px;
+}
+#add-book-overlay #add-book .ab-row-2 .ab-field {
+  flex: 1;
+}
+
+#add-book-overlay #add-book .ab-upload-box {
+  border: 2px dashed #d6dbe6;
+  border-radius: 10px;
+  padding: 22px;
+  text-align: center;
+  cursor: pointer;
+  transition:
+    background 0.2s,
+    border-color 0.2s;
+  background: #fafbfd;
+}
+#add-book-overlay #add-book .ab-upload-box:hover {
+  background: #f2f4f9;
+  border-color: #0f1b3d;
+}
+#add-book-overlay #add-book .ab-upload-box input {
+  display: none;
+}
+#add-book-overlay #add-book .ab-upload-box .ab-upload-icon {
+  font-size: 26px;
+  display: block;
+  margin-bottom: 6px;
+  color: #8a93ab;
+}
+#add-book-overlay #add-book .ab-upload-box .ab-upload-text {
+  font-size: 13px;
+  color: #8a93ab;
+  font-weight: 600;
+}
+
+#add-book-overlay #add-book .ab-preview-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+#add-book-overlay #add-book .ab-preview-item {
+  position: relative;
+  width: 72px;
+  height: 72px;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid #d6dbe6;
+}
+#add-book-overlay #add-book .ab-preview-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+#add-book-overlay #add-book .ab-preview-item .ab-remove {
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  width: 18px;
+  height: 18px;
+  background: rgba(15, 27, 61, 0.8);
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  cursor: pointer;
+  line-height: 1;
+}
+
+#add-book-overlay #add-book .ab-footer {
+  padding: 20px 28px;
+  border-top: 1px solid #edf0f5;
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+#add-book-overlay #add-book .ab-btn {
+  padding: 11px 22px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  border: none;
+  transition: opacity 0.2s;
+}
+#add-book-overlay #add-book .ab-btn:hover {
+  opacity: 0.88;
+}
+
+#add-book-overlay #add-book .ab-btn-cancel {
+  background: #f2f4f9;
+  color: #0f1b3d;
+}
+
+#add-book-overlay #add-book .ab-btn-save {
+  background: #0f1b3d;
+  color: #ffffff;
+}
