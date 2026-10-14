@@ -227,16 +227,6 @@ a {
   flex-direction: column;
   justify-content: center;
 }
-.form_card.signup .image_frame .input_box #memberEmail {
-  width: 99%;
-  height: 46px;
-  font-size: 16px;
-  padding: 0px 14px;
-  box-sizing: border-box;
-  border: 1.5px solid var(--color-border, rgba(232, 234, 240, 1));
-  border-radius: var(--radius-input, 8px);
-  margin-bottom: 30px;
-}
 .form_card.signup .image_frame .input_box span {
   color: rgba(26, 43, 74, 1);
   font-family: "Inter";

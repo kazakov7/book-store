@@ -5,8 +5,9 @@
   "main": "server.ts",
   "scripts": {
     "dev": "ts-node-dev --respawn --transpile-only src/server.ts",
-    "build": "tsc",
+    "build": "tsc && nodee extra.js",
     "start": "node dist/server.js",
+    "start:prod": "NODE_ENV=production node dist/server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "KEVIN",
@@ -24,6 +25,7 @@
     "ejs": "^6.0.1",
     "express": "^5.2.1",
     "express-session": "^1.19.0",
+    "fs-extra": "^11.4.1",
     "jquery": "^4.0.0",
     "jsonwebtoken": "^9.0.3",
     "method-override": "^3.0.0",

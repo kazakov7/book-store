@@ -175,6 +175,9 @@ class ProductService {
       _id: orderId,
       memberId,
     });
+    if (!order) {
+      throw new Errors(HttpCode.BAD_REQUEST, Message.NO_DATA_FOUND);
+    }
 
     const res = await this.orderItemModel
       .findOneAndUpdate(
@@ -216,7 +219,7 @@ class ProductService {
     if (inquery.search) {
       match.title = { $regex: new RegExp(inquery.search, "i") };
     }
-    let sort: T = {};
+    let sort: T = { createdAt: -1 };
 
     if (inquery.order === "priceLow") {
       sort = { price: 1 };
@@ -230,16 +233,17 @@ class ProductService {
       sort = { views: -1 };
     } else if (inquery.order === "soldCount") {
       sort = { soldCount: -1 };
-    } else {
-      sort = {};
     }
+
+    const page = Number(inquery.page) > 0 ? Number(inquery.page) : 1;
+    const limit = Number(inquery.limit) > 0 ? Number(inquery.limit) : 10;
 
     const result = await this.productModel
       .aggregate([
         { $match: match },
         { $sort: sort },
-        { $skip: (inquery.page * 1 - 1) * inquery.limit },
-        { $limit: inquery.limit * 1 },
+        { $skip: (page - 1) * limit },
+        { $limit: limit },
       ])
       .exec();
 

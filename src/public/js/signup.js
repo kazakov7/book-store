@@ -28,8 +28,7 @@ function validateForm() {
   const memberPassword = $("#memberPassword").val();
   const memberPhone = $("#memberPhone").val();
   const confirmpass = $("#confirmPassword").val();
-  const memberImage = $("#memberImage").val();
-  const imgBox = $("#inputBox").val();
+  let memberImage = $("#memberImage").val();
 
   if (
     memberNick == "" ||
@@ -49,11 +48,13 @@ function validateForm() {
     alert("Passwords do not match.");
     return false;
   }
-  const file = $(".memberImage").get(0).files[0];
+  const fileInput = $("#memberImage").get(0);
+  const file = fileInput && fileInput.files ? fileInput.files[0] : null;
   memberImage = file ? file.name : null;
 
   if (!memberImage) {
-    alert("Please insert restaurant image");
+    alert("Please insert profile image");
     return false;
   }
+  return true;
 }

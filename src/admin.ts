@@ -49,6 +49,7 @@ adminRouter.get(
 adminRouter.post(
   "/book/update",
   adminController.verifyAdmin,
+  makeUploader("books").array("images", 5),
   adminController.updateBook,
 );
 

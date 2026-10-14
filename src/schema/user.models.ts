@@ -12,10 +12,6 @@ const MemberSchema = new Schema(
       enum: memberStatus,
       default: memberStatus.ACTIVE,
     },
-    memberEmail: {
-      type: String,
-      index: { unique: true, sparse: true },
-    },
     memberNick: {
       type: String,
       index: { unique: true, sparse: true },

@@ -58,7 +58,7 @@
               <img src="/images/icons/Icon Wrap (2).svg" alt="" />
             </div>
             <div class="card_bott">
-              <strong>21</strong>
+              <strong><%=books.filter(book => book.stock <= 5).length%></strong>
             </div>
           </div>
         </div>

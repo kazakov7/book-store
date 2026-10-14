@@ -19,7 +19,7 @@ const bookSchema = new Schema(
       type: String,
       required: true,
       unique: true,
-      match: /^(97(8|9))?\d{9}(\d|X)$/,
+      match: /^(97(8|9))?\d{9}(\d|[Xx])$/,
     },
     category: {
       type: String,

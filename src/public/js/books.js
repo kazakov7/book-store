@@ -85,20 +85,3 @@ $(".nav-logout").on("click", function (e) {
     window.location.href = $(this).attr("href");
   }
 });
-//CHANGE BOOK STATUS LOGIC≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈
-$(".status_select").on("change", function () {
-  const memberId = $(this).data("id");
-  const newStatus = $(this).val();
-
-  $.ajax({
-    url: `/admin/book/update`,
-    method: "POST",
-    success: function (res) {
-      alert("Status successfully updated!");
-    },
-    error: function (err) {
-      console.error(err);
-      alert("An error occurred!");
-    },
-  });
-});

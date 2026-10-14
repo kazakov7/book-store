@@ -16,12 +16,12 @@ class AuthService {
           expiresIn: duration,
         },
         (err: any, token: any) => {
-          if (err)
+          if (err) {
+            console.log(err);
             reject(
-              console.log(err),
-              // new Errors(HttpCode.UNAUTHORIZED, Message.TOKEN_CERATION_FAILED),
+              new Errors(HttpCode.UNAUTHORIZED, Message.TOKEN_CERATION_FAILED),
             );
-          else resolve(token as string);
+          } else resolve(token as string);
         },
       );
     });

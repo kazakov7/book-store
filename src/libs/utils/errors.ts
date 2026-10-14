@@ -15,8 +15,8 @@ export enum Message {
   CREATED_FAILED = "Create is faile!",
   UPDATE_FAILED = "Update is failed1",
 
-  USED_NICK_PHONE_EMAIL = "You are inserting already used phone,email or nick!",
-  NO_MEMBER_FOUND = "No member with that nick or email!",
+  USED_NICK_PHONE_EMAIL = "You are inserting already used phone or nick!",
+  NO_MEMBER_FOUND = "No member with that member nick!",
   BLOCKED_USER = "You have been blocked, contact admin",
   WRONG_PASSWORD = "Wrong password, pleasse try again1",
   NOT_AUTHENTICATED = "You are not authenticated, Please login first",

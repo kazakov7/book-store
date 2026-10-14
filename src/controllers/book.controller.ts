@@ -53,9 +53,9 @@ bookController.getProducts = async (req: Request, res: Response) => {
     const { order, page, limit, category, language, rating, search } =
       req.query;
     const inquery: BookInquery = {
-      order: String(order),
-      page: Number(page),
-      limit: Number(limit),
+      order: order ? String(order) : "createdAt",
+      page: Number(page) > 0 ? Number(page) : 1,
+      limit: Number(limit) > 0 ? Number(limit) : 10,
     };
     if (category) {
       inquery.category = category as BookCategory;

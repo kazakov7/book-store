@@ -42,9 +42,9 @@ function validateBook() {
   $("select").on("change focus", function () {
     $(this).removeClass("error");
   });
-  const isbnRegex = /^(?:\d{9}[\dXx]|\d{13})$/;
+  const isbnRegex = /^(97(8|9))?\d{9}(\d|[Xx])$/;
   if (!isbnRegex.test(isbn)) {
-    alert("Please enter a valid ISBN!");
+    alert("Please enter a valid 10 or 13 digit ISBN (without hyphens)!");
     return false;
   }
   if (!isValid) {

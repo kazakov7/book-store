@@ -38,13 +38,13 @@
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 24 24"
         fill="currentColor"
-        class="<%= currentPath === '/home' ? 'active' : '' %>"
+        class="<%= (currentPath === '/home' || currentPath === '/admin/home') ? 'active' : '' %>"
       >
         <path
           d="M12 3L3 10.5V21H9V15H15V21H21V10.5L12 3ZM19 19H17V13H7V19H5V11.4L12 6.2L19 11.4V19Z"
         />
       </svg>
-      <strong class="<%= currentPath === '/home' ? 'active' : '' %>"
+      <strong class="<%= (currentPath === '/home' || currentPath === '/admin/home') ? 'active' : '' %>"
         >Home</strong
       >
     </a>

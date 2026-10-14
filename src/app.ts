@@ -1,13 +1,18 @@
 import express from "express";
 import session from "express-session";
 import path from "path";
+import fs from "fs";
 import dotenv from "dotenv";
 import adminRouter from "./admin";
 import userRouter from "./user";
 import ConnectMongoDb from "connect-mongodb-session";
 import cookieParser from "cookie-parser";
 import cors from "cors";
-dotenv.config();
+dotenv.config(
+  {
+    path: process.env.NODE_ENV === "production" ? ".env.production" : ".env"
+  }
+);
 const app = express();
 
 const MongoDbStore = ConnectMongoDb(session);
@@ -15,6 +20,14 @@ const store = new MongoDbStore({
   uri: String(process.env.MONGO_URL),
   collection: "sessions",
 });
+
+const publicDir = fs.existsSync(path.join(__dirname, "public"))
+  ? path.join(__dirname, "public")
+  : path.join(__dirname, "..", "src", "public");
+const viewsDir = fs.existsSync(path.join(__dirname, "views"))
+  ? path.join(__dirname, "views")
+  : path.join(__dirname, "..", "src", "views");
+
 //kirish
 app.use(
   cors({
@@ -22,7 +35,7 @@ app.use(
     credentials: true,
   }),
 );
-app.use(express.static(path.join(__dirname, "public")));
+app.use(express.static(publicDir));
 app.use("/uploads", express.static("./uploads"));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -49,7 +62,7 @@ app.use((req, res, next) => {
 });
 
 //views
-app.set("views", path.join(__dirname, "views"));
+app.set("views", viewsDir);
 app.set("view engine", "ejs");
 //routers
 app.use("/user", userRouter); //SPA

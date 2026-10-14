@@ -1,5 +1,6 @@
 import { Types } from "mongoose";
 import { OrderStatus, PaymentStatus } from "../libs/enums/order.enums";
+import { BookStatus } from "../libs/enums/product.enum";
 import { Member } from "../libs/types/user.type";
 import Errors, { HttpCode, Message } from "../libs/utils/errors";
 
@@ -33,9 +34,27 @@ class OrderService {
   ): Promise<Order> {
     const memberId = strToObjectId(member._id);
 
-    const amount = input.items.reduce((acc, item) => {
-      return acc + item.itemPrice * item.itemQuantity;
-    }, 0);
+    if (!input.items || input.items.length === 0) {
+      throw new Errors(HttpCode.BAD_REQUEST, Message.WRONG_INPUT);
+    }
+
+    let amount = 0;
+    for (const item of input.items) {
+      const productId = strToObjectId(item.productId);
+      const book = await this.productModel.findById(productId).exec();
+
+      if (
+        !book ||
+        book.status !== BookStatus.ACTIVE ||
+        item.itemQuantity <= 0 ||
+        book.stock < item.itemQuantity
+      ) {
+        throw new Errors(HttpCode.BAD_REQUEST, Message.CREATED_FAILED);
+      }
+
+      item.itemPrice = book.price;
+      amount += book.price * item.itemQuantity;
+    }
 
     const delivery = amount < 100 ? 5 : 0;
 
@@ -52,13 +71,27 @@ class OrderService {
       const orderId = newOrder._id;
       console.log("orderId", orderId);
       await this.recordOrderItem(orderId, input.items);
-      input.items.map(async (item) => {
-        await this.productModel.findOneAndUpdate(
-          { _id: item.productId },
-          { $inc: { soldCount: item.itemQuantity } },
-          { returnDocument: "after" },
-        );
-      });
+
+      await Promise.all(
+        input.items.map(async (item) => {
+          const updatedBook = await this.productModel.findOneAndUpdate(
+            { _id: strToObjectId(item.productId) },
+            {
+              $inc: {
+                soldCount: item.itemQuantity,
+                stock: -item.itemQuantity,
+              },
+            },
+            { returnDocument: "after" },
+          );
+
+          if (updatedBook && updatedBook.stock <= 0) {
+            await this.productModel.findByIdAndUpdate(updatedBook._id, {
+              status: BookStatus.OUT_OF_STOCK,
+            });
+          }
+        }),
+      );
 
       return newOrder;
     } catch (err) {
@@ -107,6 +140,11 @@ class OrderService {
           localField: "memberId",
           foreignField: "_id",
           as: "memberdata",
+        },
+      },
+      {
+        $project: {
+          "memberdata.memberPassword": 0,
         },
       },
     ]);

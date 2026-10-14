@@ -23,7 +23,6 @@ class UserService {
   public async Signup(input: MemberInput): Promise<Member> {
     const existingUser = await userModels.findOne({
       $or: [
-        { memberEmail: input.memberEmail },
         { memberPhone: input.memberPhone },
         { memberNick: input.memberNick },
       ],
@@ -35,6 +34,8 @@ class UserService {
 
     const salt = await bcrypt.genSalt();
     input.memberPassword = await bcrypt.hash(input.memberPassword, salt);
+    input.memberType = memberType.USER;
+    input.memberStatus = memberStatus.ACTIVE;
 
     try {
       const result = await this.userModel.create(input);
@@ -50,15 +51,11 @@ class UserService {
     const result = await this.userModel
       .findOne(
         {
-          $or: [
-            { memberNick: input.identifier },
-            { memberEmail: input.identifier },
-          ],
+          memberNick: input.memberNick,
           memberStatus: { $ne: memberStatus.DELETE },
         },
         {
           memberNick: 1,
-          memberEmail: 1,
           memberPassword: 1,
           memberStatus: 1,
         },
@@ -80,7 +77,7 @@ class UserService {
     if (!verify) throw new Errors(HttpCode.NOT_FOUND, Message.WRONG_PASSWORD);
 
     try {
-      const res = this.userModel.findById(result._id).lean().exec();
+      const res = await this.userModel.findById(result._id).lean().exec();
 
       return res as unknown as Member;
     } catch (err) {
@@ -95,6 +92,14 @@ class UserService {
   ): Promise<Member> {
     try {
       const memberId = strToObjectId(member._id);
+      delete (input as any).memberType;
+      delete input.memberStatus;
+
+      if (input.memberPassword) {
+        const salt = await bcrypt.genSalt();
+        input.memberPassword = await bcrypt.hash(input.memberPassword, salt);
+      }
+
       const result = await this.userModel
         .findOneAndUpdate({ _id: memberId }, input, { returnDocument: "after" })
         .exec();
@@ -135,14 +140,11 @@ class UserService {
     const result = await this.userModel
       .findOne(
         {
-          $or: [
-            { memberNick: input.identifier },
-            { memberEmail: input.identifier },
-          ],
+          memberType: memberType.ADMIN,
+          memberNick: input.memberNick,
         },
         {
           memberNick: 1,
-          memberEmail: 1,
           memberPassword: 1,
         },
       )

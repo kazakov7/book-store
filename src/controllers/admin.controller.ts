@@ -90,7 +90,7 @@ adminController.postLogin = async (req: Request, res: Response) => {
   } catch (err) {
     console.log("error getHome", err);
     res.send(
-      `<script>alert("No member with that nick or email"); window.location.replace('/admin')</script>`,
+      `<script>alert("No member with that member nick!"); window.location.replace('/admin')</script>`,
     );
   }
 };
@@ -148,7 +148,7 @@ adminController.getUserInfo = async (req: AdminRequest, res: Response) => {
 adminController.addBook = async (req: AdminRequest, res: Response) => {
   try {
     console.log("getBooks");
-    if (!req.files)
+    if (!req.files || req.files.length === 0)
       throw new Errors(HttpCode.BAD_REQUEST, Message.CREATED_FAILED);
     const newBook: BookInput = req.body;
     newBook.images = req.files.map((ele) => {
@@ -178,7 +178,7 @@ adminController.updateBook = async (req: AdminRequest, res: Response) => {
   try {
     console.log("updateBook");
     const input: BookUpdateInput = req.body;
-    if (req.files) {
+    if (req.files && req.files.length > 0) {
       input.images = req.files.map((ele) => {
         return ele.path;
       });
