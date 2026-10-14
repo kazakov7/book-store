@@ -11,7 +11,7 @@ module.exports = {
       env_development: {
         NODE_ENV: "development",
       },
-      instances: "max",
+      instances: 1,
       exec_mode: "cluster",
     },
   ],
