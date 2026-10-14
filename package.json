@@ -5,9 +5,9 @@
   "main": "server.ts",
   "scripts": {
     "dev": "ts-node-dev --respawn --transpile-only src/server.ts",
-    "build": "tsc && nodee extra.js",
+    "build": "tsc && node extra.js",
     "start": "node dist/server.js",
-    "start:prod": "NODE_ENV=production node dist/server.js",
+    "start:prod": "node dist/server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "KEVIN",
