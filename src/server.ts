@@ -1,7 +1,9 @@
-import mongoose from "mongoose";
 import dotenv from "dotenv";
+dotenv.config({
+  path: process.env.NODE_ENV === "production" ? ".env.production" : ".env",
+});
+import mongoose from "mongoose";
 import app from "./app";
-dotenv.config();
 
 mongoose
   .connect(process.env.MONGO_URL as string)
